@@ -78,7 +78,7 @@ provider:
     binaryMediaTypes: 'image/png'
 
 plugins:
-  - serverless-esbuild
+  # - serverless-esbuild
   - serverless-finch
   - serverless-step-functions
   - serverless-plugin-split-stacks
@@ -106,7 +106,7 @@ stepFunctions: ${file(./serverless-configs/${self:provider.name}-step-functions.
 package:
   individually: true
   patterns:
-  # TODO this adds migrations to every lambda package, we need to only provide them to the migrateDatabase function
+    # TODO this adds migrations to every lambda package, we need to only provide them to the migrateDatabase function
     - 'migrations/**'
 
 configValidationMode: error
